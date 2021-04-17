@@ -3,19 +3,20 @@ const app = express();
 
 const ip = process.env.IP || '0.0.0.0';
 const port = process.env.PORT || 8080;
-
+//Catches requests made to localhost:3000/
+app.get('/', (req, res) => res.send('Hello World!');
+	
 const puppeteer = require("puppeteer");
 const fs = require("fs");
 const { PendingXHR } = require("pending-xhr-puppeteer");
 
 (async () => {
-  const browser = await puppeteer.launch({
-    headless: false,
-    args:[
-		'--start-maximized' // you can also use '--start-fullscreen'
-	 ],
-    ignoreDefaultArgs: ["--enable-automation"]
-  });
+ const browser = await puppeteer.launch({
+  args: [
+    '--no-sandbox',
+    '--disable-setuid-sandbox',
+  ],
+});
   const page = await browser.newPage();
   const pages = await browser.pages();
   await page.setViewport({ width: 1366, height: 768});
@@ -39,7 +40,7 @@ const { PendingXHR } = require("pending-xhr-puppeteer");
 		timeout: 0
 	  }
 	);     
-
+res.send('kam hua re bhaiya');
 const pendingXHR = new PendingXHR(page);
 async function foo4() {
 await pendingXHR.waitForAllXhrFinished();
@@ -54,9 +55,7 @@ setTimeout(foo4, 500);
 await pendingXHR.waitForAllXhrFinished();
 foo4();
 console.clear();
-})();
-//Catches requests made to localhost:3000/
-app.get('/', (req, res) => res.send('Hello World!'));
+})(););
 
 
 //Initialises the express server on the port 30000
