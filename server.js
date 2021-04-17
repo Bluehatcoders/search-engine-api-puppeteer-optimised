@@ -55,7 +55,7 @@ setTimeout(foo4, 500);
 await pendingXHR.waitForAllXhrFinished();
 foo4();
 console.clear();
-})();
+});
 app.get('/', (req, res) => hello());
 
 
