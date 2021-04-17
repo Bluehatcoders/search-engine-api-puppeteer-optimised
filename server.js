@@ -1,4 +1,4 @@
-const express = require('express');
+/* const express = require('express');
 const app = express();
 
 const ip = process.env.IP || '0.0.0.0';
@@ -33,4 +33,4 @@ app.get('/', (req, res) => res.send('Hello World!'));
 
 //Initialises the express server on the port 30000
 app.listen(port, ip);
-
+*/
