@@ -20,7 +20,7 @@ const { PendingXHR } = require("pending-xhr-puppeteer");
   await page._client.send("Emulation.clearDeviceMetricsOverride");
 
   // Reading Cookies
-  const cookies = fs.readFileSync("C:/Users/SUDHIR/Videos/cookies.json", "utf8"); // we are reading from the cookies henceforth
+  const cookies = fs.readFileSync("/cookies.json", "utf8"); // we are reading from the cookies henceforth
   const deserializedCookies = JSON.parse(cookies);
   await page.setCookie(...deserializedCookies);
   
