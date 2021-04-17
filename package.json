@@ -15,7 +15,7 @@
     "nodemon": "^2.0.2",
     "puppeteer": "^2.0.0",
     "pending-xhr-puppeteer": "^2.3.3",
-    "fs": "^0.0.1-security,
+    "fs": "^0.0.1-security",
     "yarn": "^1.22.0"
   }
 }
