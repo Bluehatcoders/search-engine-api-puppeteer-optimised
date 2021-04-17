@@ -9,7 +9,7 @@ const puppeteer = require("puppeteer");
 const fs = require("fs");
 const { PendingXHR } = require("pending-xhr-puppeteer");
 
-(async function hello() {
+async function hello() {
   res.send('kam hua re bhaiya');
  const browser = await puppeteer.launch({
   args: [
@@ -55,7 +55,7 @@ setTimeout(foo4, 500);
 await pendingXHR.waitForAllXhrFinished();
 foo4();
 console.clear();
-});
+};
 app.get('/', (req, res) => hello());
 
 
