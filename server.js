@@ -4,13 +4,13 @@ const app = express();
 const ip = process.env.IP || '0.0.0.0';
 const port = process.env.PORT || 8080;
 //Catches requests made to localhost:3000/
-app.get('/', (req, res) => res.send('Hello World!');
 	
 const puppeteer = require("puppeteer");
 const fs = require("fs");
 const { PendingXHR } = require("pending-xhr-puppeteer");
 
-(async () => {
+(async function hello() {
+  res.send('kam hua re bhaiya');
  const browser = await puppeteer.launch({
   args: [
     '--no-sandbox',
@@ -55,7 +55,8 @@ setTimeout(foo4, 500);
 await pendingXHR.waitForAllXhrFinished();
 foo4();
 console.clear();
-})(););
+})();
+app.get('/', (req, res) => hello());
 
 
 //Initialises the express server on the port 30000
